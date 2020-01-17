@@ -25,8 +25,9 @@ void GPIOInit(void)
 {
     // Настраиваем светодиод
 	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;			//Включаем порт C
-    GPIOC->CRH &= ~GPIO_CRH_CNF13;
-	GPIOC->CRH |= GPIO_CRH_MODE13_0;			//Порт С вывод 13 как выход
+    GPIOC->CRH &= ~GPIO_CRH_CNF13;				//Порт С вывод 13 как выход push-pull 
+	GPIOC->CRH |= GPIO_CRH_MODE13_0;			//Maximum output speed 10 MHz
+
 	
 	// Настраиваем выводы для входа энкодера PA6 - CH1 TIM3, PA7 - CH2 TIM3
 	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;			//Включаем порт A
