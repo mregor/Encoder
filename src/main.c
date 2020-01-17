@@ -33,7 +33,7 @@ void GPIOInit(void)
 	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;			//Включаем порт A
 	GPIOA->CRL &= ~(GPIO_CRL_CNF6_0 | GPIO_CRL_CNF7_0);	//Выводы PA6, PA7 - как вход
 	GPIOA->CRL |= GPIO_CRL_CNF6_1 | GPIO_CRL_CNF7_1;	//Выводы PA6, PA7 - pull-up
-	GPIOA->ODR |= GPIO_ODR_ODR6 | GPIO_ODR_ODR7;		//Согласно таблице на стр.161 RM0080
+	GPIOA->ODR |= GPIO_ODR_ODR6 | GPIO_ODR_ODR7;		//Согласно таблице на стр.161 RM0008
 }	
 void TIMInit(void)
 {
