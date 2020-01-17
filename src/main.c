@@ -46,4 +46,5 @@ void TIMInit(void)
 	TIM3->ARR = 40;		// До скольки считать
 	TIM3->CNT = 0;		// Счетчик регистра
 	TIM3->CR1 |= TIM_CR1_CEN;	//Включаем счет TIM3
+
 }
