@@ -1,0 +1,6 @@
+r
+loadbin encoder.hex, 0x08000000
+//verifybin build\encoder.bin, 0x08000000
+r
+g
+q
