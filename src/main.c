@@ -3,7 +3,6 @@
 
 int main(void)
 {
-	//uint16_t count = 0;
 	GPIOInit();
 	TIMInit();
 	GPIOC->BSRR |= GPIO_BSRR_BR13;
@@ -41,7 +40,6 @@ void TIMInit(void)
 	TIM3->CCMR1 |= TIM_CCMR1_IC1F | TIM_CCMR1_IC2F; 	// Включаем фильтр дребезга контактов
 	TIM3->CCMR1 |= TIM_CCMR1_CC1S_0 | TIM_CCMR1_CC2S_0;	// Включаем канал 1 и 2 TIM3 как входы
 	TIM3->CCER &= ~(TIM_CCER_CC1P | TIM_CCER_CC2P);		// Счёт по фронту сигнала (можно не делать, это по умолчанию)
-//	TIM3->CCER &= ~(TIM_CCER_CC1NP | TIM_CCER_CC2NP);	// ??? в даташите так написано ???
 	TIM3->SMCR |= TIM_SMCR_SMS_0 | TIM_SMCR_SMS_1;		// Счет по фронту канала 1 и 2
 
 	TIM3->ARR = 40;		// До скольки считать
